@@ -26,11 +26,17 @@ main:
 	sw $fp, 8($sp)
 	addi $fp, $sp, 56
 	
-	li $a0, 5
-	li $a1, 10
-	li $a2, 15
-	li $a3, 20
-	li $s1, 25
+	li $s0, 5
+	li $s1, 10
+	li $s2, 15
+	li $s3, 20
+	li $s4, 25
+	
+	move $a0, $s0
+	move $a1, $s1
+	move $a2, $s2
+	move $a3, $s3
+	
 	
 	jal sum
 	
@@ -71,7 +77,7 @@ sum:
 	add $t1, $a0, $a1
 	add $t1, $t1, $a2
 	add $t1, $t1, $a3
-	add $t1, $t1, $s1
+	add $t1, $t1, $s4
 	
 	div $t1, $t1, 5
 	move $a0, $t1
